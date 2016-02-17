@@ -65,7 +65,7 @@ var HHControlPanel = React.createClass({
                   <form className="panel-footer form-inline">
                     <div className="form-group">
                       <div className="input-group">
-                        <input type="text" className="form-control" id="update" placeholder={this.state.current_price} onChange={this.updatePrice} autocomplete="off" />
+                        <input type="text" className="form-control" id="update" placeholder={this.state.current_price} onChange={this.updatePrice} autoComplete="off" />
                         <div className="input-group-addon">¢/kWh</div>
                       </div>
                     </div>
