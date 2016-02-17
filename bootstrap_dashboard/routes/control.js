@@ -7,6 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var request = require('request');
+var constants = require('../constants');
+var mongo = require('../mongo');
 
 router.use(logger('dev'));
 router.use(bodyParser.json());
@@ -29,6 +32,21 @@ router.get('/data', function(req, res, next) {
 });
 
 router.post('/data', function(req, res, next) {
+  mongo.query(constants.HOMEHUBS, {}, function (err, docs) {
+    for(var i = 0; i < docs.length; i++) {
+      var options = {
+        url: docs[i].callback_url,
+        method: "POST",
+        json: { type: "price", value: req.body.current_price }
+      };
+
+      request(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+          console.log(body);
+        }
+      });
+    }
+  });
   res.cookie('current_price', req.body.current_price).json({"current_price": req.cookies.current_price});
 });
 
