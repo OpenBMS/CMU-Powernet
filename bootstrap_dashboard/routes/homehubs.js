@@ -182,7 +182,7 @@ router.get('/aggregation/:timestamp', function(req, res) {
         var id = ''+docs[index]._id;
         ids.push(id);
         names[id] = docs[index].label;
-        latestPower[id] = [docs[index]['total_power']];
+        latestPower[id] = [docs[index]['total_power'] * 1000];
         history[id] = {};
         history[id]['key'] = names[id];
         history[id]['values'] = [];
