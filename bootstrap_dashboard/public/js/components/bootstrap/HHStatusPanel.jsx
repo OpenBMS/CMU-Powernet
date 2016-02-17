@@ -33,7 +33,7 @@ var HHStatusPanel = React.createClass({
         for (var i = 0; i < (HHStatus.length / 3); i++) {
             
             var oneRow = [];
-            for (var j = 0; (j < 3 && j < statuses_left); j++) {
+            for (var j = 0; (j < 3 && j <= statuses_left); j++) {
                 var hhindex = i * 3 + j;
                 
                 var onePanel = (
@@ -47,7 +47,7 @@ var HHStatusPanel = React.createClass({
                                     <div className="col-xs-9 text-right">
                                         <div>
                                             <div className="huge">
-                                                {HHStatus[hhindex].total_power * 1000}W
+                                                {(HHStatus[hhindex].total_power * 1000).toFixed(2)}W
                                             </div>
                                         </div>
                                         <div>{HHStatus[hhindex].name}</div>
