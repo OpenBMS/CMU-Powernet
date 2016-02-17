@@ -37,7 +37,7 @@ router.post('/data', function(req, res, next) {
       var options = {
         url: docs[i].callback_url,
         method: "POST",
-        json: { type: "price", value: req.body.current_price }
+        json: req.body.current_price ? { type: "price", value: req.body.current_price } : { type: "disruption" }
       };
 
       request(options, function (error, response, body) {
@@ -47,7 +47,7 @@ router.post('/data', function(req, res, next) {
       });
     }
   });
-  res.cookie('current_price', req.body.current_price).json({"current_price": req.cookies.current_price});
+  res.cookie('current_price', req.body.current_price || req.cookies.current_price).json({"current_price": req.cookies.current_price});
 });
 
 module.exports = router;
