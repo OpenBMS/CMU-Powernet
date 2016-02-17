@@ -27,7 +27,6 @@ var ObjectId = require('mongodb').ObjectID;
 var constants = require('../constants');
 
 router.get('/data', function(req, res, next) {
-  console.log(req.cookies);
   res.json({"current_price": req.cookies.current_price});
 });
 
@@ -41,9 +40,6 @@ router.post('/data', function(req, res, next) {
       };
 
       request(options, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-          console.log(body);
-        }
       });
     }
   });
