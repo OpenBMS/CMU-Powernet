@@ -15,7 +15,7 @@ var LineChart = React.createClass({
     chart.xAxis.tickFormat(function(d) { return d3.time.format('%X')(new Date(d)) });
     chart.yAxis.tickFormat(d3.format(',.1f'));
     chart.xAxis.axisLabel('Timestamp')
-    chart.yAxis.axisLabel('Power Consumption (KW)')
+    chart.yAxis.axisLabel('Power Consumption (W)')
   },
   getInitialState: function() {
     return {data: []};

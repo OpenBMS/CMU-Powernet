@@ -207,7 +207,7 @@ router.get('/aggregation/:timestamp', function(req, res) {
             index = 0;
             while(index < records.length) {
               record = records[index];
-              history[record.uuid]['values'].push([record['timestamp'], record['total_power']]);
+              history[record.uuid]['values'].push([record['timestamp'], record['total_power'] * 1000]);
               index++;
             }
           }

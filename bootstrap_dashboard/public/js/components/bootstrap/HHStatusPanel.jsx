@@ -46,7 +46,7 @@ var HHStatusPanel = React.createClass({
                                     <div className="col-xs-9 text-right">
                                         <div>
                                             <div className="huge">
-                                                {HHStatus[hhindex].total_power} KW
+                                                {HHStatus[hhindex].total_power * 1000}W
                                             </div>
                                         </div>
                                         <div>{HHStatus[hhindex].name}</div>
