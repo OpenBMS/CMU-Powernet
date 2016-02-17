@@ -144,15 +144,18 @@ router.get('/', function(req, res) {
     } else {
       
       var index = 0;
+      var total_power = 0;
       
       while(index < docs.length) {
         var homehub = docs[index];
+        total_power += homehub.total_power;
         response.push({'hh_id': homehub._id, 'name': homehub.label,
           'total_power': homehub.total_power, 'online': 'true'});
         index++;
       }
 
       response.sort(sortByHubId);
+      response.push({'hh_id': 'total', 'name': 'Total Power', 'total_power': total_power, 'online': 'true'});
 
       res.status(constants.SUCCESS).send(response);
     }
