@@ -299,6 +299,10 @@ table.dataTable thead .sorting:after {
     font-size: 40px;
 }
 
+.large {
+    font-size: 24px;
+}
+
 .panel-green {
     border-color: #5cb85c;
 }

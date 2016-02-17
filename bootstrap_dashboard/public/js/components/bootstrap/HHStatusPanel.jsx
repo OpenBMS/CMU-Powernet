@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/dashboard.css';
 import $ from 'jquery';
+import HHControlPanel from './HHControlPanel.jsx'
 
 var HHStatusPanel = React.createClass({
     getInitialState: function() {

@@ -16,9 +16,11 @@ var app = express();
 var homehubs = require('./routes/homehubs.js');
 var hhstatus = require('./routes/hhstatus.js');
 var maproute = require('./routes/maproute.js');
+var control  = require('./routes/control.js');
 app.use('/homehubs', homehubs);
 app.use('/hhstatus', hhstatus);
 app.use('/map', maproute);
+app.use('/control', control);
 /**
  * Test data files
  */
