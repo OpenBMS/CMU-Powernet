@@ -114,8 +114,8 @@ app.use(function(err, req, res, next) {
 
 //app.listen(3000);
 mongo.init(function() {
-  app.listen(3000, function() {
-    console.log("Node app is running at localhost:" + 3000)
+  app.listen(process.env.PORT || 3000, function() {
+    console.log("Node app is running");
   })
 })
 //module.exports = app;

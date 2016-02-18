@@ -2,7 +2,7 @@ var assert = require('assert');
 var MongoClient = require('mongodb').MongoClient;
 
 var db
-var url = 'mongodb://localhost:27017/PowernetDB';
+var url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/PowernetDB';
 
 /**
 *	Query for one specific collection with condition. If conditioin is {},
