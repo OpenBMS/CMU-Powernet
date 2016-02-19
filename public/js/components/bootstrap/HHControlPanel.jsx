@@ -94,7 +94,7 @@ var HHControlPanel = React.createClass({
                       </div>
                       <div className="col-xs-9 text-right">
                         <div className="large">
-                          Service Disruption
+                          Loss of Generation
                         </div>
                       </div>
                     </div>
@@ -102,13 +102,13 @@ var HHControlPanel = React.createClass({
                   {(() => {
                     if(this.state.disruption_notified) {
                       return (<div className="panel-footer">
-                        <span className="pull-left">Hubs Notified</span>
+                        <span className="pull-left">Units Notified</span>
                         <div className="clearfix"></div>
                       </div>);
                     } else {
                       return (<a href="#" onClick={this.notifyDisruption}>
                         <div className="panel-footer">
-                          <span className="pull-left">Notify Hubs</span>
+                          <span className="pull-left">Notify Units</span>
                           <span className="pull-right"><i className="fa fa-arrow-circle-right"></i></span>
                           <div className="clearfix"></div>
                         </div>
